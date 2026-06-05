@@ -1,0 +1,10 @@
+*
+!.gitignore
+!docs/
+!write/
+!templates/
+!build.py
+!requirements.txt
+!.github/
+!.github/workflows/
+!.github/workflows/*
