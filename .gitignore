@@ -1,10 +1,14 @@
 *
 !.gitignore
 !docs/
+!docs/*
 !write/
+!write/*
 !templates/
 !build.py
 !requirements.txt
 !.github/
 !.github/workflows/
 !.github/workflows/*
+!journey_templates
+!journey_templates/*
