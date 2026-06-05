@@ -16,8 +16,8 @@ Dart adalah bahasa pemrograman yang dibuat google pada 2012 dengan tujuan mencip
 
 Dalam pengembangannya, Dart membuat solusi yang sangat membantu developer, seperti:
 1. Null Safety: mencegah *null pointer exception*
-2. Modernized Compiler: fitur *hot reload* & *just-in-time*
-3. OOP: semua value di Dart adalah *Object*
+\n2. Modernized Compiler: fitur *hot reload* & *just-in-time*
+\n3. OOP: semua value di Dart adalah *Object*
 
 Sekarang, environment Dart telah berkembang sangat pesat yang melebihi tujuan penciptaannya, seperti:
 1. Pembuatan Software cross platform
