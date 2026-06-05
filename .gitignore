@@ -1,13 +1,18 @@
+# 1. Abaikan semua file dan folder di root proyek
 *
+
+# 2. JANGAN abaikan file .gitignore dan vercel.json
 !.gitignore
+!vercel.json
+
+# 3. JANGAN abaikan folder spesifik beserta seluruh isinya
 !docs/
-!docs/*
+!docs/**
 !write/
-!write/*
-!templates/
+!write/**
+!journey_templates/
+!journey_templates/**
+
+# 4. JANGAN ABAIKAN FILE PYTHON DAN DEPENDENCY (Tambahkan baris ini)
 !build.py
 !requirements.txt
-!journey_templates
-!journey_templates/*
-!app.py
-!vercel.json
