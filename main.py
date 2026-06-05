@@ -6,14 +6,13 @@ import yaml
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 import sys
-import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-CONTENT_DIR = os.path.join(BASE_DIR, "write")
-TEMPLATE_DIR = os.path.join(BASE_DIR, "journey_templates")
-OUTPUT_DIR = os.path.join(BASE_DIR, "docs")
+CONTENT_DIR = "write"
+TEMPLATE_DIR = "journey_templates"
+OUTPUT_DIR = "docs"
 TEMPLATE_FILE = "template.html"
+
+def clean_slug(filename):
     base = os.path.splitext(filename)[0]
     base = re.sub(r'^\d+-', '', base)
     return base.lower()
@@ -389,8 +388,4 @@ def build():
     print("Build complete! Static documentation available in docs/ folder.")
 
 if __name__ == "__main__":
-    try:
-        build()
-    except Exception as e:
-        print(f:CRITICAL ERROR: {e})
-        sys.exit(1)
+    build()
