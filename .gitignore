@@ -9,3 +9,5 @@
 !requirements.txt
 !journey_templates
 !journey_templates/*
+!app.py
+!vercel.json
