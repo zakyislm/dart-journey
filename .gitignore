@@ -1,10 +1,12 @@
 *
 !.gitignore
+!vercel.json
+
 !docs/
-!docs/*
+!docs/**
 !write/
 !write/*
-!main.py
-!requirements.txt
 !journey_templates
 !journey_templates/*
+!main.py
+!requirements.txt
