@@ -5,6 +5,7 @@ import shutil
 import yaml
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
+import sys
 
 CONTENT_DIR = "write"
 TEMPLATE_DIR = "journey_templates"
@@ -387,4 +388,8 @@ def build():
     print("Build complete! Static documentation available in docs/ folder.")
 
 if __name__ == "__main__":
-    build()
+    try:
+        build()
+    except Exception as e:
+        print(f:CRITICAL ERROR: {e})
+        sys.exit(1)
