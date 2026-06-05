@@ -9,7 +9,7 @@ from jinja2 import Environment, FileSystemLoader
 CONTENT_DIR = "write"
 TEMPLATE_DIR = "journey_templates"
 OUTPUT_DIR = "docs"
-TEMPLATE_FILE = "templates.html"
+TEMPLATE_FILE = "template.html"
 
 def clean_slug(filename):
     base = os.path.splitext(filename)[0]
