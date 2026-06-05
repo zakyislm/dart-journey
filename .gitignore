@@ -4,8 +4,7 @@
 !docs/*
 !write/
 !write/*
-!templates/
-!build.py
+!main.py
 !requirements.txt
 !journey_templates
 !journey_templates/*
