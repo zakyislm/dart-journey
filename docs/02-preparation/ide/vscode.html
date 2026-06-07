@@ -787,7 +787,7 @@
                     </h1>
                     
                     <h2 class="font-headline-md text-headline-md text-on-surface-variant dark:text-zinc-400 italic">
-                        Instalasi, konfigurasi, dan ekstensi Visual Studio Code untuk pengembangan Dart
+                        Konfigurasi Visual Studio Code untuk pengembangan Dart yang produktif
                     </h2>
                     
                     <div class="mt-stack-md flex flex-wrap items-center gap-stack-sm border-y border-primary dark:border-zinc-800 py-4">
@@ -812,32 +812,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Visual Studio Code adalah editor paling populer untuk pengembangan Dart, terutama dengan Flutter. Ringan, cepat, dan memiliki ekstensi resmi Dart yang terus diperbarui oleh tim Google.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
-                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
-                                <span class="font-label-md text-label-md text-gray-400">terminal.ps1</span>
-                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">POWERSHELL</span>
-                            </div>
-                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
-                                <div class="code-accent-line pl-4">
-                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Windows - via winget</span>
-<span class="code-kw">winget</span> install Microsoft.VisualStudioCode
-
-<span class="code-comment"># macOS - via Homebrew</span>
-<span class="code-kw">brew</span> install <span class="code-annotation">--cask</span> visual-studio-code
-
-<span class="code-comment"># Linux - via Snap</span>
-<span class="code-kw">sudo</span> snap install code <span class="code-annotation">--classic</span>
-
-<span class="code-comment"># Atau unduh dari: https://code.visualstudio.com</span></code></pre>
-                                </div>
-                            </div>
+                            Visual Studio Code (VS Code) adalah editor kode ringan dari Microsoft yang menjadi pilihan populer untuk pengembangan Dart dan Flutter. Dengan extension resmi Dart, Anda mendapatkan syntax highlighting, IntelliSense, debugging, dan hot reload.
                         </div>
                     </section>
                     
@@ -845,7 +820,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Instalasi Ekstensi Dart</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Instalasi VS Code</h3>
                         </div>
                     </section>
                     
@@ -853,7 +828,34 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Buka VS Code, masuk ke panel Extensions (<code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+X</code>), dan install:
+                            Unduh dan instal VS Code dari <a href="https://code.visualstudio.com/" class="text-primary dark:text-zinc-100 underline decoration-dotted underline-offset-2 hover:decoration-solid">code.visualstudio.com</a>. Tersedia untuk Windows, macOS, dan Linux.
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Instalasi Extension Dart</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            1. Buka VS Code
+2. Klik icon Extensions di sidebar kiri (atau tekan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+X</code>)
+3. Cari "Dart" — pastikan extension dari <strong>Dart Code</strong> (verified publisher)
+4. Klik <strong>Install</strong>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            Extension Dart otomatis menginstal dependency berikut:
                         </div>
                     </section>
                     
@@ -865,26 +867,18 @@
 <table class="w-full border-collapse brutalist-border dark:border-zinc-700">
 <thead>
 <tr class="bg-zinc-100 dark:bg-zinc-800">
-<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Ekstensi</th>
-<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Publisher</th>
+<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Extension</th>
 <th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Fungsi</th>
 </tr>
 </thead>
 <tbody>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Dart</strong></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Dart Code</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Syntax highlighting, code completion, debugging, hot reload</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Syntax highlighting, IntelliSense, debugging, code completion</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Flutter</strong></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Dart Code</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Flutter-specific tools (widget inspector, device manager, emulator)</td>
-</tr>
-<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Pubspec Assist</strong></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Jesus Rodriguez</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Auto-complete dan validasi pubspec.yaml</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Hot reload, widget inspector, Flutter outline (otomatis terinstal jika Flutter terdeteksi)</td>
 </tr>
 </tbody>
 </table>
@@ -897,56 +891,33 @@
                     <section class="mb-stack-xl">
                         <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
                             <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
-                                <span class="font-label-md text-label-md text-gray-400">terminal.ps1</span>
-                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">POWERSHELL</span>
-                            </div>
-                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
-                                <div class="code-accent-line pl-4">
-                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Atau via CLI</span>
-code <span class="code-annotation">--install-extension</span> <span class="code-kw">dart</span>-code.<span class="code-kw">dart</span>-code
-code <span class="code-annotation">--install-extension</span> <span class="code-kw">dart</span>-code.<span class="code-kw">flutter</span>
-code <span class="code-annotation">--install-extension</span> jesus-rodriguez.pubspec-assist</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
-                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
                                 <span class="font-label-md text-label-md text-gray-400">settings.json</span>
-                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">JSONC</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">JSON</span>
                             </div>
                             <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
                                 <div class="code-accent-line pl-4">
                                     <pre class="whitespace-pre"><code class="text-white block">{
-  // Dart-specific settings
-  &quot;dart.debugExternalPackageLibraries&quot;: false,
-  &quot;dart.debugSdkLibraries&quot;: false,
-  &quot;dart.showTodos&quot;: true,
-  &quot;dart.lineLength&quot;: 80,
-  &quot;dart.previewFlutterUiGuides&quot;: true,
+  // Dart &amp; Flutter
+  &quot;dart.flutterSdkPath&quot;: &quot;/path/to/flutter&quot;,
+  &quot;dart.sdkPath&quot;: &quot;/path/to/dart-sdk&quot;,
 
-  // Format on save
+  // Auto-format on save
   &quot;editor.formatOnSave&quot;: true,
   &quot;editor.codeActionsOnSave&quot;: {
-    &quot;source.fixAll&quot;: &quot;explicit&quot;,
-    &quot;source.organizeImports&quot;: &quot;explicit&quot;
+    &quot;source.fixAll&quot;: &quot;explicit&quot;
   },
 
-  // Dart formatter sebagai default untuk file .dart
-  &quot;[dart]&quot;: {
-    &quot;editor.defaultFormatter&quot;: &quot;Dart-Code.dart-code&quot;,
-    &quot;editor.formatOnSave&quot;: true,
-    &quot;editor.tabSize&quot;: 2,
-    &quot;editor.rulers&quot;: [80]
-  },
+  // Line length guide (Dart convention: 80 chars)
+  &quot;dart.lineLength&quot;: 80,
 
-  // Closing labels untuk nested function/class
+  // Closing labels untuk nested widgets
   &quot;dart.closingLabels&quot;: true,
-  &quot;dart.previewLsp&quot;: true
+
+  // Preview Flutter UI guides
+  &quot;dart.previewFlutterUiGuides&quot;: true,
+
+  // Show todos in Problems panel
+  &quot;dart.showTodos&quot;: true
 }</code></pre>
                                 </div>
                             </div>
@@ -957,47 +928,7 @@ code <span class="code-annotation">--install-extension</span> jesus-rodriguez.pu
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Fitur Penting</h3>
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Code Completion.</strong> Dart extension menyediakan IntelliSense yang kontekstual — parameter hints, import otomatis, dan dokumentasi inline saat hover.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Debugging.</strong> Set breakpoint, step through code, dan inspect variable values langsung di editor. Tekan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F5</code> untuk memulai debugging.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Static Analysis.</strong> Error ditampilkan real-time di Problems panel. Proyek Dart dianalisis otomatis setiap kali file disimpan.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Code Actions.</strong> Tekan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+.</code> pada kode yang bermasalah untuk melihat saran perbaikan otomatis. Contohnya: ekstrak method, convert ke async, wrap dengan widget.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Shortcuts Penting</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Shortcut Penting</h3>
                         </div>
                     </section>
                     
@@ -1015,6 +946,14 @@ code <span class="code-annotation">--install-extension</span> jesus-rodriguez.pu
 </thead>
 <tbody>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+P</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Command Palette</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+.</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Quick Fix / Code Actions</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F5</code></td>
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Start debugging</td>
 </tr>
@@ -1023,32 +962,20 @@ code <span class="code-annotation">--install-extension</span> jesus-rodriguez.pu
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Run without debugging</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+.</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Quick fix / code actions</td>
-</tr>
-<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+O</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to symbol in file</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Shift+Alt+F</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Format document</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F12</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to definition</td>
-</tr>
-<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Shift+F12</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Find all references</td>
-</tr>
-<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F2</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Rename symbol</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to Definition</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+K Ctrl+C</code></td>
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Comment line</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+K Ctrl+U</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Uncomment line</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Alt+Up/Down</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Move line</td>
 </tr>
 </tbody>
 </table>
@@ -1059,25 +986,37 @@ code <span class="code-annotation">--install-extension</span> jesus-rodriguez.pu
                 
                     
                     <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Membuat dan Menjalankan Project</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            Setelah extension terinstal, buat project Dart baru:
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
                         <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
                             <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
-                                <span class="font-label-md text-label-md text-gray-400">terminal.ps1</span>
-                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">POWERSHELL</span>
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
                             </div>
                             <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
                                 <div class="code-accent-line pl-4">
-                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># 1. Buka Command Palette (Ctrl+Shift+P)</span>
-<span class="code-comment"># 2. Pilih &quot;Dart: New Project&quot;</span>
-<span class="code-comment"># 3. Pilih template:</span>
-<span class="code-comment">#    - Console Application (CLI)</span>
-<span class="code-comment">#    - Dart Package (library)</span>
-<span class="code-comment">#    - Web Application</span>
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Melalui Command Palette (Ctrl+Shift+P)</span>
+<span class="code-comment"># Ketik: Dart: New Project</span>
+<span class="code-comment"># Pilih: Console Application</span>
 
-<span class="code-comment"># 4. Pilih direktori dan beri nama proyek</span>
-
-<span class="code-comment"># 5. Atau via terminal:</span>
-<span class="code-kw">dart</span> create my_dart_project
-code my_dart_project</code></pre>
+<span class="code-comment"># Atau via terminal di VS Code (Ctrl+`)</span>
+<span class="code-kw">dart</span> create my_app
+<span class="code-kw">cd</span> my_app
+<span class="code-kw">dart</span> run</code></pre>
                                 </div>
                             </div>
                         </div>
@@ -1087,7 +1026,7 @@ code my_dart_project</code></pre>
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Output</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Debugging di VS Code</h3>
                         </div>
                     </section>
                     
@@ -1095,7 +1034,79 @@ code my_dart_project</code></pre>
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Setelah proyek dibuat, struktur file akan tampil di Explorer. Jalankan dengan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F5</code> untuk memulai debugging, atau <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+F5</code> untuk run tanpa debugging.
+                            VS Code mendukung debugging Dart secara native. Breakpoint dapat dipasang dengan klik di samping nomor baris. Tekan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">F5</code> untuk mulai debugging.
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">debug_example.dart</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">DART</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-kw">void</span> main() {
+  <span class="code-kw">var</span> numbers = [<span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>, <span class="code-num">4</span>, <span class="code-num">5</span>];
+  <span class="code-kw">var</span> sum = <span class="code-num">0</span>;
+
+  <span class="code-kw">for</span> (<span class="code-kw">var</span> n <span class="code-kw">in</span> numbers) {
+    sum += n;  <span class="code-comment">// Pasang breakpoint di sini</span>
+  }
+
+  print(<span class="code-string">&#x27;Total: $sum&#x27;</span>);
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Extension Tambahan yang Direkomendasikan</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <div class="overflow-x-auto mb-stack-md">
+<table class="w-full border-collapse brutalist-border dark:border-zinc-700">
+<thead>
+<tr class="bg-zinc-100 dark:bg-zinc-800">
+<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Extension</th>
+<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Error Lens</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Menampilkan error dan warning inline</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>CodeSnap</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Screenshot kode dengan styling</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Better Comments</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Highlight jenis komentar berbeda</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>GitLens</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Git blame, history, dan visualisasi</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Material Icon Theme</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Icon tema untuk file explorer</td>
+</tr>
+</tbody>
+</table>
+</div>
                         </div>
                     </section>
                     

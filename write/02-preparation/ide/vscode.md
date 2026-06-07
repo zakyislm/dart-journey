@@ -1,6 +1,6 @@
 ---
 title: VS Code Setup for Dart
-subtitle: Instalasi, konfigurasi, dan ekstensi Visual Studio Code untuk pengembangan Dart
+subtitle: Konfigurasi Visual Studio Code untuk pengembangan Dart yang produktif
 date: 06-07-2026
 language: Dart
 breadcrumbs:
@@ -15,113 +15,105 @@ pagination:
   next_url: /02-preparation/ide/android-studio
 ---
 
-Visual Studio Code adalah editor paling populer untuk pengembangan Dart, terutama dengan Flutter. Ringan, cepat, dan memiliki ekstensi resmi Dart yang terus diperbarui oleh tim Google.
+Visual Studio Code (VS Code) adalah editor kode ringan dari Microsoft yang menjadi pilihan populer untuk pengembangan Dart dan Flutter. Dengan extension resmi Dart, Anda mendapatkan syntax highlighting, IntelliSense, debugging, dan hot reload.
 
 ### Instalasi VS Code
 
-```powershell:terminal.ps1
-# Windows - via winget
-winget install Microsoft.VisualStudioCode
+Unduh dan instal VS Code dari [code.visualstudio.com](https://code.visualstudio.com/). Tersedia untuk Windows, macOS, dan Linux.
 
-# macOS - via Homebrew
-brew install --cask visual-studio-code
+### Instalasi Extension Dart
 
-# Linux - via Snap
-sudo snap install code --classic
+1. Buka VS Code
+2. Klik icon Extensions di sidebar kiri (atau tekan `Ctrl+Shift+X`)
+3. Cari "Dart" — pastikan extension dari **Dart Code** (verified publisher)
+4. Klik **Install**
 
-# Atau unduh dari: https://code.visualstudio.com
-```
+Extension Dart otomatis menginstal dependency berikut:
 
-### Instalasi Ekstensi Dart
-
-Buka VS Code, masuk ke panel Extensions (`Ctrl+Shift+X`), dan install:
-
-| Ekstensi | Publisher | Fungsi |
-|----------|-----------|--------|
-| **Dart** | Dart Code | Syntax highlighting, code completion, debugging, hot reload |
-| **Flutter** | Dart Code | Flutter-specific tools (widget inspector, device manager, emulator) |
-| **Pubspec Assist** | Jesus Rodriguez | Auto-complete dan validasi pubspec.yaml |
-
-```powershell:terminal.ps1
-# Atau via CLI
-code --install-extension dart-code.dart-code
-code --install-extension dart-code.flutter
-code --install-extension jesus-rodriguez.pubspec-assist
-```
+| Extension | Fungsi |
+|-----------|--------|
+| **Dart** | Syntax highlighting, IntelliSense, debugging, code completion |
+| **Flutter** | Hot reload, widget inspector, Flutter outline (otomatis terinstal jika Flutter terdeteksi) |
 
 ### Konfigurasi settings.json
 
-```jsonc:settings.json
+```json:settings.json
 {
-  // Dart-specific settings
-  "dart.debugExternalPackageLibraries": false,
-  "dart.debugSdkLibraries": false,
-  "dart.showTodos": true,
-  "dart.lineLength": 80,
-  "dart.previewFlutterUiGuides": true,
+  // Dart & Flutter
+  "dart.flutterSdkPath": "/path/to/flutter",
+  "dart.sdkPath": "/path/to/dart-sdk",
 
-  // Format on save
+  // Auto-format on save
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
+    "source.fixAll": "explicit"
   },
 
-  // Dart formatter sebagai default untuk file .dart
-  "[dart]": {
-    "editor.defaultFormatter": "Dart-Code.dart-code",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "editor.rulers": [80]
-  },
+  // Line length guide (Dart convention: 80 chars)
+  "dart.lineLength": 80,
 
-  // Closing labels untuk nested function/class
+  // Closing labels untuk nested widgets
   "dart.closingLabels": true,
-  "dart.previewLsp": true
+
+  // Preview Flutter UI guides
+  "dart.previewFlutterUiGuides": true,
+
+  // Show todos in Problems panel
+  "dart.showTodos": true
 }
 ```
 
-### Fitur Penting
-
-**Code Completion.** Dart extension menyediakan IntelliSense yang kontekstual — parameter hints, import otomatis, dan dokumentasi inline saat hover.
-
-**Debugging.** Set breakpoint, step through code, dan inspect variable values langsung di editor. Tekan `F5` untuk memulai debugging.
-
-**Static Analysis.** Error ditampilkan real-time di Problems panel. Proyek Dart dianalisis otomatis setiap kali file disimpan.
-
-**Code Actions.** Tekan `Ctrl+.` pada kode yang bermasalah untuk melihat saran perbaikan otomatis. Contohnya: ekstrak method, convert ke async, wrap dengan widget.
-
-### Shortcuts Penting
+### Shortcut Penting
 
 | Shortcut | Aksi |
 |----------|------|
+| `Ctrl+Shift+P` | Command Palette |
+| `Ctrl+.` | Quick Fix / Code Actions |
 | `F5` | Start debugging |
 | `Ctrl+F5` | Run without debugging |
-| `Ctrl+.` | Quick fix / code actions |
-| `Ctrl+Shift+O` | Go to symbol in file |
-| `F12` | Go to definition |
-| `Shift+F12` | Find all references |
-| `F2` | Rename symbol |
+| `Shift+Alt+F` | Format document |
+| `F12` | Go to Definition |
 | `Ctrl+K Ctrl+C` | Comment line |
-| `Ctrl+K Ctrl+U` | Uncomment line |
+| `Alt+Up/Down` | Move line |
 
-### Proyek Dart Baru di VS Code
+### Membuat dan Menjalankan Project
 
-```powershell:terminal.ps1
-# 1. Buka Command Palette (Ctrl+Shift+P)
-# 2. Pilih "Dart: New Project"
-# 3. Pilih template:
-#    - Console Application (CLI)
-#    - Dart Package (library)
-#    - Web Application
+Setelah extension terinstal, buat project Dart baru:
 
-# 4. Pilih direktori dan beri nama proyek
+```bash:terminal.sh
+# Melalui Command Palette (Ctrl+Shift+P)
+# Ketik: Dart: New Project
+# Pilih: Console Application
 
-# 5. Atau via terminal:
-dart create my_dart_project
-code my_dart_project
+# Atau via terminal di VS Code (Ctrl+`)
+dart create my_app
+cd my_app
+dart run
 ```
 
-### Output
+### Debugging di VS Code
 
-Setelah proyek dibuat, struktur file akan tampil di Explorer. Jalankan dengan `F5` untuk memulai debugging, atau `Ctrl+F5` untuk run tanpa debugging.
+VS Code mendukung debugging Dart secara native. Breakpoint dapat dipasang dengan klik di samping nomor baris. Tekan `F5` untuk mulai debugging.
+
+```dart:debug_example.dart
+void main() {
+  var numbers = [1, 2, 3, 4, 5];
+  var sum = 0;
+
+  for (var n in numbers) {
+    sum += n;  // Pasang breakpoint di sini
+  }
+
+  print('Total: $sum');
+}
+```
+
+### Extension Tambahan yang Direkomendasikan
+
+| Extension | Fungsi |
+|-----------|--------|
+| **Error Lens** | Menampilkan error dan warning inline |
+| **CodeSnap** | Screenshot kode dengan styling |
+| **Better Comments** | Highlight jenis komentar berbeda |
+| **GitLens** | Git blame, history, dan visualisasi |
+| **Material Icon Theme** | Icon tema untuk file explorer |

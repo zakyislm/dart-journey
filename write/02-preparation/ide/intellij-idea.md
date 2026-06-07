@@ -1,6 +1,6 @@
 ---
 title: IntelliJ IDEA Setup for Dart
-subtitle: Konfigurasi JetBrains IntelliJ IDEA untuk pengembangan Dart
+subtitle: Konfigurasi IntelliJ IDEA untuk pengembangan Dart profesional
 date: 06-07-2026
 language: Dart
 breadcrumbs:
@@ -15,98 +15,103 @@ pagination:
   next_url: /03-fundamentals/index
 ---
 
-IntelliJ IDEA (Community atau Ultimate) dari JetBrains memberikan pengalaman pengembangan Dart yang matang, terutama bagi developer yang sudah familiar dengan ekosistem JetBrains (Java, Kotlin, Python).
+IntelliJ IDEA adalah IDE flagship JetBrains yang menawarkan fitur code analysis, refactoring, dan navigation paling advanced. Tersedia dalam edisi **Community** (gratis) dan **Ultimate** (berbayar).
 
 ### Instalasi IntelliJ IDEA
 
-```powershell:terminal.ps1
-# Windows - via winget
-winget install JetBrains.IntelliJIDEA.Community
-
-# macOS - via Homebrew
-brew install --cask intellij-idea-ce
-
-# Linux - via Snap
-sudo snap install intellij-idea-community --classic
-
-# Atau unduh dari: https://www.jetbrains.com/idea/download
-```
-
-### Perbedaan Community vs Ultimate
-
-| Fitur | Community | Ultimate |
-|-------|-----------|----------|
-| Plugin Dart | Ya | Ya |
-| Plugin Flutter | Ya | Ya |
-| Web development | Terbatas | Penuh (HTML, CSS, JS) |
-| Database tools | Tidak | Ya |
-| Framework support | Terbatas | Spring, Jakarta, Micronaut |
-| Biaya | Gratis | Berbayar |
-
-Untuk pengembangan Dart murni, **Community Edition sudah mencukupi**.
+1. Unduh dari [jetbrains.com/idea/download](https://www.jetbrains.com/idea/download/)
+2. **Community Edition** — cukup untuk pengembangan Dart dasar
+3. **Ultimate Edition** — fitur lengkap termasuk web development tools
+4. Jalankan installer dan ikuti wizard
 
 ### Instalasi Plugin Dart
 
-Buka **File > Settings > Plugins** (`Ctrl+Alt+S`):
+1. Buka IntelliJ IDEA
+2. Pilih **File → Settings** (Windows/Linux) atau **IntelliJ IDEA → Preferences** (macOS)
+3. Navigasi ke **Plugins → Marketplace**
+4. Cari "Dart" — oleh JetBrains
+5. Klik **Install** lalu **Restart IDE**
 
-1. Buka tab **Marketplace**
-2. Cari "Dart" — publisher **JetBrains**
-3. Klik **Install**
-4. Restart IDE
+Plugin Dart otomatis menyediakan:
 
-Plugin Flutter akan otomatis menginstal plugin Dart sebagai dependency.
+| Fitur | Deskripsi |
+|-------|-----------|
+| Syntax highlighting | Highlighting cerdas dengan semantic analysis |
+| Code completion | Auto-complete dengan type inference |
+| Real-time analysis | Error dan warning muncul saat mengetik |
+| Refactoring | Rename, extract method, inline variable, dll |
+| Navigation | Go to definition, find usages, type hierarchy |
+| Debugging | Breakpoint, step through, variable inspection |
+| Code formatting | `dart format` terintegrasi |
 
 ### Konfigurasi Dart SDK
 
-Setelah plugin terinstal:
+```text:settings.txt
+File → Settings → Languages & Frameworks → Dart
 
-1. Buka **File > Settings > Languages & Frameworks > Dart**
-2. Centang "Enable Dart support"
-3. Masukkan path ke Dart SDK (terdeteksi otomatis jika di PATH)
-4. Klik **Apply**
-
-### Membuat Proyek Dart
-
-**File > New > Project**:
-
-1. Pilih **Dart** dari daftar generator
-2. Pilih template: Console Application, Web Server, atau Package
-3. Tentukan nama dan lokasi proyek
-4. Pilih Dart SDK version
-5. Klik **Create**
-
-### Fitur Eksklusif IntelliJ
-
-**Refactoring.** IntelliJ memiliki engine refactoring paling canggih: extract method, inline variable, change signature, dan move class antar file.
-
-**VCS Integration.** Git, GitHub, GitLab, Mercurial terintegrasi langsung dengan diff viewer yang powerful.
-
-**Live Templates.** Potongan kode yang dapat dikustomisasi dengan shortcut. Contohnya, ketik `main` lalu `Tab` untuk generate fungsi `main()`.
-
-```dart:example.dart
-// Live template: psvm + Tab
-void main() {
-
-}
-
-// Live template: iter + Tab
-for (var item in collection) {
-
-}
+✓ Enable Dart support
+  Dart SDK path: C:\tools\dart-sdk (atau lokasi instalasi Anda)
+  ✓ Enable Dart support for the project
 ```
 
-**Code Analysis.** Inspections yang lebih mendalam dibanding editor lain — mendeteksi dead code, unnecessary imports, dan potensi bug.
+### Membuat Project Dart
 
-### Shortcuts Penting
+```bash:terminal.sh
+# Via File → New → Project
+# Pilih Dart di panel kiri
+# Isi Project name dan lokasi
+# Pilih Dart SDK
+# Klik Create
+
+# Atau via terminal
+dart create my_project
+# Lalu buka folder my_project di IntelliJ (File → Open)
+```
+
+### Fitur Advanced JetBrains
+
+| Fitur | Keterangan |
+|-------|------------|
+| **Structural Search** | Pencarian berdasarkan pattern kode, bukan teks |
+| **Intention Actions** | Alt+Enter — saran perbaikan kontekstual |
+| **Code Inspections** | Ratusan aturan analisis statis |
+| **Live Templates** | Template kode yang bisa dikustomisasi |
+| **Local History** | Version control lokal tanpa Git |
+| **Run Configurations** | Konfigurasi run/debug yang fleksibel |
+| **Version Control** | Integrasi Git, GitHub, GitLab, Mercurial |
+| **Terminal Built-in** | Terminal terintegrasi dengan path SDK |
+
+### Shortcut Utama (Keymap Default — Windows/Linux)
 
 | Shortcut | Aksi |
 |----------|------|
-| `Shift+F10` | Run |
+| `Ctrl+Shift+A` | Find Action |
+| `Double Shift` | Search Everywhere |
+| `Alt+Enter` | Show Context Actions |
+| `Ctrl+Shift+F10` | Run |
 | `Shift+F9` | Debug |
-| `Alt+Enter` | Quick fix |
-| `Ctrl+N` | Go to class |
-| `Ctrl+Shift+N` | Go to file |
-| `Ctrl+E` | Recent files |
-| `Ctrl+Shift+A` | Find action |
-| `Shift+F6` | Rename |
-| `Ctrl+Alt+L` | Reformat code |
+| `Ctrl+Alt+L` | Reformat Code |
+| `Ctrl+Alt+O` | Optimize Imports |
+| `Shift+F6` | Rename (refactoring) |
+| `Ctrl+Q` | Quick Documentation |
+| `Ctrl+P` | Parameter Info |
+| `Ctrl+Shift+Space` | Smart Code Completion |
+| `Ctrl+F12` | File Structure |
+
+### Perbandingan Edisi
+
+| Aspek | Community | Ultimate |
+|-------|-----------|----------|
+| Dart/Flutter | ✔ | ✔ |
+| Java/Kotlin | ✔ | ✔ |
+| Spring Boot | ✘ | ✔ |
+| JavaScript/TypeScript | ✘ | ✔ |
+| Database Tools | ✘ | ✔ |
+| Profiler | ✘ | ✔ |
+| Harga | Gratis | Mulai \$16.90/bln |
+
+### Rekomendasi
+
+- **Dart/Flutter only** — Community Edition sudah mencukupi
+- **Full-stack dengan backend** — Ultimate Edition untuk database dan web tools
+- **Mahasiswa/Open-source** — Ultimate gratis melalui [JetBrains Student Pack](https://www.jetbrains.com/community/education/#students)

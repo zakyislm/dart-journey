@@ -787,7 +787,7 @@
                     </h1>
                     
                     <h2 class="font-headline-md text-headline-md text-on-surface-variant dark:text-zinc-400 italic">
-                        Instalasi dan konfigurasi Android Studio untuk pengembangan Dart dan Flutter
+                        Konfigurasi Android Studio untuk pengembangan Dart dan Flutter
                     </h2>
                     
                     <div class="mt-stack-md flex flex-wrap items-center gap-stack-sm border-y border-primary dark:border-zinc-800 py-4">
@@ -812,32 +812,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Android Studio adalah IDE resmi Google untuk pengembangan Android. Dengan plugin Dart dan Flutter, Android Studio menjadi pilihan utama bagi developer yang membangun aplikasi mobile dengan Flutter.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
-                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
-                                <span class="font-label-md text-label-md text-gray-400">terminal.ps1</span>
-                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">POWERSHELL</span>
-                            </div>
-                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
-                                <div class="code-accent-line pl-4">
-                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Windows - via winget</span>
-<span class="code-kw">winget</span> install Google.AndroidStudio
-
-<span class="code-comment"># macOS - via Homebrew</span>
-<span class="code-kw">brew</span> install <span class="code-annotation">--cask</span> android-studio
-
-<span class="code-comment"># Linux - via Snap</span>
-<span class="code-kw">sudo</span> snap install android-studio <span class="code-annotation">--classic</span>
-
-<span class="code-comment"># Atau unduh dari: https://developer.android.com/studio</span></code></pre>
-                                </div>
-                            </div>
+                            Android Studio adalah IDE resmi Google untuk pengembangan Android, berbasis IntelliJ IDEA. Dengan plugin Dart dan Flutter, Android Studio menjadi pilihan utama untuk pengembangan aplikasi mobile.
                         </div>
                     </section>
                     
@@ -845,7 +820,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Setup Awal</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Instalasi Android Studio</h3>
                         </div>
                     </section>
                     
@@ -853,7 +828,9 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Setelah instalasi, buka Android Studio dan ikuti wizard setup:
+                            1. Unduh dari <a href="https://developer.android.com/studio" class="text-primary dark:text-zinc-100 underline decoration-dotted underline-offset-2 hover:decoration-solid">developer.android.com/studio</a>
+2. Jalankan installer dan ikuti wizard
+3. Pastikan komponen berikut tercentang saat instalasi:
                         </div>
                     </section>
                     
@@ -861,10 +838,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            1. Pilih "Do not import settings" untuk instalasi bersih
-2. Pilih "Standard" setup type
-3. Pilih tema UI (Light/Dark)
-4. Download SDK components yang direkomendasikan
+                            <ul class="list-disc pl-6 space-y-1 mb-stack-md"><li style="padding-left: 6px;">Android SDK</li><li style="padding-left: 6px;">Android SDK Platform</li><li style="padding-left: 6px;">Android Virtual Device (AVD)</li></ul>
                         </div>
                     </section>
                     
@@ -880,7 +854,10 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Buka <strong>File > Settings > Plugins</strong> (<code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Alt+S</code>):
+                            1. Buka Android Studio
+2. Pilih <strong>File → Settings</strong> (Windows/Linux) atau <strong>Android Studio → Preferences</strong> (macOS)
+3. Navigasi ke <strong>Plugins</strong>
+4. Cari dan install plugin berikut:
                         </div>
                     </section>
                     
@@ -888,10 +865,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            1. Buka tab <strong>Marketplace</strong>
-2. Cari "Dart" dan klik <strong>Install</strong>
-3. Cari "Flutter" dan klik <strong>Install</strong>
-4. Restart Android Studio
+                            <ul class="list-disc pl-6 space-y-1 mb-stack-md"><li style="padding-left: 6px;"><strong>Dart</strong> — oleh JetBrains</li><li style="padding-left: 6px;"><strong>Flutter</strong> — oleh JetBrains (otomatis menginstal Dart juga)</li></ul>
                         </div>
                     </section>
                     
@@ -899,7 +873,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Plugin Dart akan otomatis terinstal bersama Flutter jika Anda memilih untuk menginstal Flutter terlebih dahulu.
+                            5. Restart IDE setelah instalasi
                         </div>
                     </section>
                     
@@ -907,7 +881,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Konfigurasi Flutter SDK</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Konfigurasi SDK Path</h3>
                         </div>
                     </section>
                     
@@ -915,7 +889,51 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            Setelah plugin Flutter terinstal:
+                            Setelah plugin terinstal, pastikan SDK path terdeteksi:
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Cek lokasi Dart SDK</span>
+<span class="code-kw">where</span> <span class="code-kw">dart</span>        <span class="code-comment"># Windows</span>
+which <span class="code-kw">dart</span>        <span class="code-comment"># macOS/Linux</span>
+
+<span class="code-comment"># Cek lokasi Flutter SDK (jika terinstal)</span>
+<span class="code-kw">where</span> <span class="code-kw">flutter</span>     <span class="code-comment"># Windows</span>
+which <span class="code-kw">flutter</span>     <span class="code-comment"># macOS/Linux</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Via File → New → New Flutter Project</span>
+<span class="code-comment"># Pilih Flutter</span>
+<span class="code-comment"># Isi project name dan lokasi</span>
+<span class="code-comment"># Klik Finish</span>
+
+<span class="code-comment"># Atau via terminal</span>
+<span class="code-kw">flutter</span> create my_flutter_app</code></pre>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     
@@ -923,25 +941,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            1. Buka <strong>File > Settings > Languages & Frameworks > Flutter</strong>
-2. Masukkan path ke Flutter SDK (contoh: <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">C:\flutter</code> atau <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">~/development/flutter</code>)
-3. Klik <strong>Apply</strong>
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Membuat Proyek Baru</h3>
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>File > New > New Flutter Project</strong> — pilih tipe proyek:
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Fitur Utama Android Studio</h3>
                         </div>
                     </section>
                     
@@ -953,26 +953,42 @@
 <table class="w-full border-collapse brutalist-border dark:border-zinc-700">
 <thead>
 <tr class="bg-zinc-100 dark:bg-zinc-800">
-<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Tipe</th>
-<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Deskripsi</th>
+<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Fitur</th>
+<th class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-left font-label-md text-sm text-on-surface dark:text-zinc-200">Kegunaan</th>
 </tr>
 </thead>
 <tbody>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Flutter Application</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Aplikasi mobile/web/desktop dengan UI</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Emulator Manager</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Menjalankan dan mengelola Android Virtual Devices</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Flutter Plugin</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Plugin untuk platform-specific API</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Flutter Inspector</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Visualisasi widget tree untuk debugging UI</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Flutter Package</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Library Dart murni (shared code)</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Flutter Outline</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Struktur widget dalam panel terpisah</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Dart Package</td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Library Dart tanpa Flutter dependency</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Hot Reload</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Tombol petir di toolbar — menerapkan perubahan kode tanpa restart</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Logcat</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Memonitor log aplikasi secara real-time</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Layout Inspector</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Inspeksi layout Android native</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Device File Explorer</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Akses file system perangkat/emulator</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><strong>Database Inspector</strong></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Query dan modifikasi database langsung</td>
 </tr>
 </tbody>
 </table>
@@ -984,47 +1000,7 @@
                     
                     <section class="mb-stack-xl">
                         <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Fitur Utama</h3>
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Android Emulator.</strong> Android Studio menyediakan AVD (Android Virtual Device) Manager untuk membuat dan menjalankan emulator langsung dari IDE.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Device Manager.</strong> Pilih target device (emulator, USB device, web) dari toolbar.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Widget Inspector.</strong> Inspeksi widget tree Flutter secara visual — sangat membantu untuk debugging UI.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <strong>Logcat.</strong> Monitor log Android real-time untuk debugging platform-specific.
-                        </div>
-                    </section>
-                    
-                
-                    
-                    <section class="mb-stack-xl">
-                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
-                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Shortcuts Penting</h3>
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Shortcut Penting</h3>
                         </div>
                     </section>
                     
@@ -1042,36 +1018,97 @@
 </thead>
 <tbody>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+F10</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Run</td>
-</tr>
-<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+F9</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Build project</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+A</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Find Action (pencarian universal)</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Alt+Enter</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Quick fix</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Quick Fix / Intention Actions</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+N</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to class</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Shift+F10</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Run</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Shift+N</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to file</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Shift+F9</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Debug</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Shift+F6</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Rename</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+F2</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Stop</td>
 </tr>
 <tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
 <td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Alt+L</code></td>
-<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Reformat code</td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Reformat Code</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+Q</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Quick Documentation</td>
+</tr>
+<tr class="even:bg-zinc-50 dark:even:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300"><code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">Ctrl+B</code></td>
+<td class="border border-zinc-300 dark:border-zinc-600 px-4 py-2 text-sm text-on-surface dark:text-zinc-300">Go to Declaration</td>
 </tr>
 </tbody>
 </table>
 </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Konfigurasi Emulator</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            1. Buka <strong>AVD Manager</strong> dari toolbar
+2. Klik <strong>Create Virtual Device</strong>
+3. Pilih device (misal: Pixel 7)
+4. Pilih system image (rekomendasi: API 34+)
+5. Klik <strong>Finish</strong>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Jalankan emulator dari terminal</span>
+<span class="code-kw">flutter</span> emulators
+<span class="code-kw">flutter</span> emulators <span class="code-annotation">--launch</span> <emulator_id>
+
+<span class="code-comment"># Jalankan aplikasi</span>
+<span class="code-kw">flutter</span> run</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Kelebihan Android Studio untuk Dart/Flutter</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <ul class="list-disc pl-6 space-y-1 mb-stack-md"><li><strong>All-in-one</strong> — Android SDK, emulator, dan tools dalam satu IDE</li><li><strong>Integrasi native</strong> — Build konfigurasi Android dan iOS langsung</li><li><strong>Profiling tools</strong> — CPU, memory, dan network profiler</li><li><strong>Visual debugging</strong> — Flutter Inspector dan Layout Inspector</li></ul>
                         </div>
                     </section>
                     

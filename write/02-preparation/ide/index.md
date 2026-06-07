@@ -1,6 +1,6 @@
 ---
 title: IDE & Editor Setup
-subtitle: Konfigurasi development environment untuk Dart - VS Code, Android Studio, dan IntelliJ IDEA
+subtitle: Perbandingan dan konfigurasi IDE untuk pengembangan Dart
 date: 06-07-2026
 language: Dart
 breadcrumbs:
@@ -14,29 +14,24 @@ pagination:
   next_url: /02-preparation/ide/vscode
 ---
 
-Dart didukung secara resmi di tiga IDE/editor utama: **Visual Studio Code**, **Android Studio**, dan **IntelliJ IDEA**. Masing-masing menyediakan plugin resmi Dart yang mencakup syntax highlighting, code completion, debugging, hot reload (Flutter), dan static analysis real-time.
+Dart mendukung berbagai IDE dan editor. Pilihan IDE bergantung pada preferensi personal dan jenis project yang akan dikerjakan. Halaman ini membandingkan tiga opsi utama.
 
 ### Perbandingan IDE
 
-| Fitur | VS Code | Android Studio | IntelliJ IDEA |
-|-------|---------|---------------|---------------|
-| Platform | Windows, macOS, Linux | Windows, macOS, Linux | Windows, macOS, Linux |
-| Berat | Ringan | Berat | Berat |
-| Target utama | Dart + Flutter (universal) | Flutter + Android | Dart + Flutter + JVM |
-| Plugin | `dart-code` | `dart` (bawaan saat install Flutter) | `dart` |
-| Hot reload | Ya | Ya | Ya |
-| Debugging | Ya | Ya | Ya |
-| Device manager | Ya | Ya (Android Emulator terintegrasi) | Ya |
-| Widget inspector | Ya | Ya | Ya |
-| Performa | Sangat cepat | Cepat | Cepat |
-| Biaya | Gratis | Gratis | Community (gratis) / Ultimate (berbayar) |
+| IDE | Kelebihan | Kekurangan | Cocok Untuk |
+|-----|-----------|------------|-------------|
+| **VS Code** | Ringan, gratis, extension marketplace luas | Perlu setup manual plugin | Pemula, web dev, general purpose |
+| **Android Studio** | Integrasi Flutter sempurna, emulator bawaan | Berat, konsumsi RAM tinggi | Mobile developer (Android/iOS) |
+| **IntelliJ IDEA** | Fitur JetBrains lengkap, refactoring powerful | Berbayar (Community gratis terbatas) | Professional developer, large project |
 
 ### Rekomendasi
 
-- **Pemula**: VS Code — ringan, cepat, dan gratis.
-- **Android Developer**: Android Studio — integrasi Android SDK dan Emulator paling mulus.
-- **Full-stack (Java/Kotlin + Dart)**: IntelliJ IDEA Ultimate.
+- **Pemula**: VS Code — ringan, mudah digunakan, dokumentasi melimpah
+- **Mobile Developer**: Android Studio — integrasi Flutter dan Android SDK terbaik
+- **Professional/Enterprise**: IntelliJ IDEA — fitur refactoring dan code analysis paling lengkap
 
-### Instalasi Plugin Dart
+### Navigasi
 
-Semua IDE menggunakan plugin Dart yang sama dari JetBrains/Google. Pilih halaman sesuai IDE Anda untuk panduan instalasi dan konfigurasi.
+- [VS Code](/02-preparation/ide/vscode) — Setup VS Code untuk Dart
+- [Android Studio](/02-preparation/ide/android-studio) — Setup Android Studio
+- [IntelliJ IDEA](/02-preparation/ide/intellij-idea) — Setup IntelliJ IDEA
