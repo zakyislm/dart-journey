@@ -1,27 +1,83 @@
 ---
-title: Dart dan Perkembangannya
-subtitle: Memahami Fundamental bahasa pemrograman Dart, Tujuan, serta Penggunaannya
-date: 06-05-2026
+title: Complete Dart Programming Language Documentation
+subtitle: Panduan komprehensif dari dasar hingga mahir — disusun untuk developer Indonesia
+date: 06-07-2026
 language: Dart
-breadcrumbs:
-  - Home
 pagination:
-  prev_title: null
-  prev_url: null
-  next_title: null
-  next_url: null
+  next_title: Pengenalan
+  next_url: /01-introduction/index
 ---
 
-Dart adalah bahasa pemrograman yang dibuat google pada 2012 dengan tujuan menciptakan alternatif modern untuk menggantikan `Javascript` sebagai bahasa pemrograman untuk aplikasi web. Google sebagai pencipta terus mengembangkannya, dan menjadi populer berkat perilisan framework UI Flutter, dimana Dart menjadi bahasa pemrograman utama framework ini.
+Dart adalah bahasa pemrograman modern, berorientasi objek, dan **type-safe** yang dikembangkan oleh Google. Dirancang untuk membangun aplikasi **client-side** — mobile (Flutter), web, server, dan CLI — Dart menawarkan performa tinggi dengan sintaks yang ekspresif dan mudah dipelajari.
 
-Dalam pengembangannya, Dart membuat solusi yang sangat membantu developer, seperti:
-- Null Safety: mencegah *null pointer exception*
-- Modernized Compiler: fitur *hot reload* & *just-in-time*
-- OOP: semua value di Dart adalah *Object*
+### Filosofi Dart
 
-Sekarang, environment Dart telah berkembang sangat pesat yang melebihi tujuan penciptaannya, seperti:
-Pembuatan Software cross platform: Dart digunakan sebagai bahasa pemrograman di Flutter untuk membuat aplikasi yang dapat dijalankan dari berbagai platform hanya dengan satu kali pengerjaan.
-Ekspansi ke Software Desktop & Web: Google telah melakukan ekspansi dengan memperbarui kemampuan Flutter untuk membuat aplikasi web yang modern dan Desktop Software (*Windows*,*macOS*, dan *Linux*)
-Back-End Development Support: Dart juga memiliki beberapa framework yang mendukung Back-End Development, seperti *Dart Frog* atau *Shelf* dan juga mendukung pembuatan API menggunakan bahasa yang sama persis untuk membuat UI interface.
+Dart dibangun dengan empat prinsip utama:
 
-Pada saat ini, Dart menjadi salah satu bahasa pemrograman yang adaptif di era modern. Tujuan awal penciptaan Dart adalah sebagai alternatif pembuatan web, dan saat ini telah berevolusi menjadi salah satu bahasa pemrograman yang dipakai dalam Flutter, framework UI cross platform. Kelebihan yang dimiliki Dart (*Null Safety*,*Hot Reload*) dan fleksibilitasnya yang dapat dijalankan dari web, Desktop bahkan Back-End, menjadikan Dart sebagai salah satu investasi jangka panjang terbaik yang pernah dibuat Google.
+**Productive.** Sintaks deklaratif namun familier. Hot reload di Flutter memungkinkan iterasi cepat. Static analysis yang kuat menangkap error lebih awal.
+
+**Portable.** Satu codebase dapat dikompilasi ke ARM/x64 machine code (native), atau JavaScript (web). Dart mendukung JIT (Just-in-Time) untuk development dan AOT (Ahead-of-Time) untuk production.
+
+**Fast.** Garbage collector generational, SIMD, dan FFI untuk interoperabilitas dengan C/C++. Isolate memungkinkan parallelism sejati tanpa shared memory.
+
+**Approachable.** Dokumentasi lengkap, toolchain sederhana, dan komunitas global yang aktif. DartPad memungkinkan eksperimen langsung tanpa instalasi.
+
+### Cuplikan Kode Dasar
+
+```dart:hello.dart
+// Fungsi entry point — setiap program Dart dimulai dari main()
+void main() {
+  // Deklarasi variabel dengan tipe inference
+  var nama = 'Dunia';
+  final tahun = 2026;
+
+  // String interpolation
+  print('Halo, $nama! Selamat datang di $tahun.');
+
+  // Anonymous function dengan arrow syntax
+  var sapa = (String n) => 'Selamat belajar, $n!';
+  print(sapa('Developer'));
+
+  // Collection literal dengan spread & collection-if
+  var keterampilan = ['Dart', 'Flutter', if (tahun > 2025) 'AI/ML'];
+  print('Keterampilan: $keterampilan');
+
+  // Null safety — compiler memastikan tidak ada null error
+  String? mungkinNull;
+  print(mungkinNull ?? 'Nilai default');
+}
+```
+
+### Output
+
+```text:output.txt
+Halo, Dunia! Selamat datang di 2026.
+Selamat belajar, Developer!
+Keterampilan: [Dart, Flutter, AI/ML]
+Nilai default
+```
+
+### Navigasi Dokumentasi
+
+Dokumentasi ini disusun dalam lima bab utama yang saling terhubung. Setiap halaman dilengkapi navigasi previous/next untuk memudahkan pembacaan berurutan.
+
+| Bab | Topik | Deskripsi |
+|-----|-------|-----------|
+| Pengenalan | Sejarah & Filosofi | Asal-usul Dart, evolusi versi, dan prinsip desain |
+| Persiapan | Instalasi & IDE | Setup SDK Dart dan konfigurasi development environment |
+| Fundamental | Variabel & Kontrol Alur | Sintaks dasar, tipe data, operator, percabangan, perulangan |
+| OOP & Lanjutan | Object-Oriented & Async | Class, inheritance, mixins, null safety, Future, Stream |
+| Ekosistem | Package & CLI | Pubspec, pub.dev, dart CLI, testing, dan deployment |
+
+### Mengapa Dart?
+
+Dart mengisi celah antara bahasa scripting dinamis (JavaScript, Python) dan bahasa sistem statis (C++, Rust). Dengan **sound null safety**, **strong typing dengan inference**, dan **multi-platform compilation**, Dart menjadi pilihan ideal untuk:
+
+- **Flutter Developer** — Membangun UI native untuk iOS, Android, Web, dan Desktop
+- **Backend Developer** — Web server dengan Shelf, Alfred, atau Serverpod
+- **CLI Tooling** — Scripting dan automation dengan kompilasi native
+- **Full-Stack Developer** — Satu bahasa untuk frontend dan backend
+
+### Prasyarat
+
+Tidak ada prasyarat ketat. Dokumentasi ini dirancang agar dapat diikuti oleh pemula yang memiliki pemahaman dasar logika pemrograman. Jika Anda sudah familiar dengan JavaScript, Java, atau C#, transisi ke Dart akan terasa natural.

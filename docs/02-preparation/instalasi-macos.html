@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Monolith | Installing Dart on macOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto+Slab:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f1f1f1",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-primary": "#c6c6c6",
+                        "on-background": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#001258",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "primary-container": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary": "#5d5e5f",
+                        "on-secondary-container": "#626363",
+                        "on-tertiary-fixed": "#001258",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#e3e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#848484",
+                        "primary": "#000000",
+                        "outline": "#7e7576",
+                        "tertiary-fixed-dim": "#b9c3ff",
+                        "on-tertiary-container": "#5c78ff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-container": "#e0dfdf",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed-variant": "#0032c2",
+                        "inverse-surface": "#303030",
+                        "on-surface": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "outline-variant": "#cfc4c5",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "tertiary-fixed": "#dee1ff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-fixed-dim": "#c6c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "1rem",
+                        "border-heavy": "1px",
+                        "gutter-sidebar": "2rem",
+                        "stack-md": "2rem",
+                        "margin-page": "4rem",
+                        "stack-xl": "4rem",
+                        "border-thick": "1px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Roboto Slab"],
+                        "headline-lg": ["Roboto Slab"],
+                        "label-md": ["Roboto Mono"],
+                        "headline-md": ["Roboto Slab"],
+                        "metadata": ["Roboto Slab"],
+                        "body-md": ["Roboto Slab"],
+                        "headline-xl": ["Roboto Slab"],
+                        "code-block": ["Roboto Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "metadata": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code-block": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .code-accent-line {
+            border-left: 4px solid rgba(81, 112, 255, 0.5);
+        }
+
+        .brutalist-border {
+            border: 1px solid #000000;
+        }
+
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #1b1b1b;
+        }
+
+        .dark .brutalist-border {
+            border-color: #27272a;
+        }
+
+        /* Syntax Highlighting Colors */
+        .code-kw {
+            color: #c678dd;
+            font-weight: 500;
+        }
+        .code-type {
+            color: #56b6c2;
+            font-weight: 500;
+        }
+        .code-num {
+            color: #d19a66;
+        }
+        .code-string {
+            color: #98c379;
+        }
+        .code-comment {
+            color: #7f848e;
+            font-style: italic;
+        }
+        .code-annotation {
+            color: #e5c07b;
+            font-weight: 500;
+        }
+
+        .dark .code-kw {
+            color: #c678dd;
+        }
+        .dark .code-type {
+            color: #56b6c2;
+        }
+        .dark .code-num {
+            color: #d19a66;
+        }
+        .dark .code-string {
+            color: #98c379;
+        }
+        .dark .code-comment {
+            color: #5c6370;
+        }
+        .dark .code-annotation {
+            color: #e5c07b;
+        }
+    </style>
+</head>
+
+<body class="bg-surface dark:bg-[#121212] text-on-surface dark:text-zinc-200 font-body-md text-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary dark:selection:bg-zinc-200 dark:selection:text-zinc-950 transition-colors duration-200">
+    
+    <header class="bg-primary dark:bg-black text-on-primary font-body-md text-body-md docked full-width top-0 border-b border-primary dark:border-zinc-800 flat no shadows flex justify-between items-center w-full h-16 fixed z-50 px-6">
+        <div class="flex items-center gap-4">
+            <button class="md:hidden cursor-pointer active:scale-95 transition-transform" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-on-primary">menu</span>
+            </button>
+            <div class="font-headline-md text-headline-md font-bold text-on-primary tracking-tighter cursor-pointer active:scale-95" onclick="window.location.href='/'">
+                Monolith
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined cursor-pointer hover:bg-on-primary/10 transition-colors p-2 text-on-primary" id="theme-toggle" aria-label="Toggle Dark Mode">dark_mode</span>
+            
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-on-primary flex items-center justify-center hover:bg-on-primary/10 transition-colors p-2 text-[24px]">
+                <i class="devicon-github-original"></i>
+            </a>
+            
+        </div>
+    </header>
+
+    <div class="flex min-h-screen">
+        <aside class="bg-surface dark:bg-[#161616] text-primary dark:text-zinc-200 font-body-md text-body-md docked fixed left-0 top-0 h-full w-[280px] border-r border-primary dark:border-zinc-800 flat no shadows z-40 hidden md:block transition-colors duration-200">
+            <div class="flex flex-col h-full p-stack-md pt-24">
+                <div class="mb-stack-xl">
+                    <h2 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-zinc-100">Monolith Docs</h2>
+                    
+                    <p class="text-on-surface-variant dark:text-zinc-400 font-metadata text-metadata">v1.0.4</p>
+                    
+                </div>
+                <nav class="flex-grow space-y-1 overflow-y-auto overflow-x-hidden min-h-0 pr-1">
+                    
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">01 Introduction</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../01-introduction/index.html">
+                <span>Introduction to Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="true">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="font-bold text-primary dark:text-zinc-100">02 Preparation</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 rotate-90">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 ">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="index.html">
+                <span>Development Environment Setup</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="instalasi-linux.html">
+                <span>Installing Dart on Linux</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 font-bold text-primary dark:text-zinc-100 underline underline-offset-4" href="instalasi-macos.html">
+                <span>Installing Dart on macOS</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="instalasi-windows.html">
+                <span>Installing Dart on Windows</span>
+            </a>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Ide</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/android-studio.html">
+                <span>Android Studio Setup for Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/index.html">
+                <span>IDE & Editor Setup</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/intellij-idea.html">
+                <span>IntelliJ IDEA Setup for Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/vscode.html">
+                <span>VS Code Setup for Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">03 Fundamentals</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/index.html">
+                <span>Dart Fundamentals</span>
+            </a>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Kontrol Alur</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/if-else.html">
+                <span>If-Else</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/index.html">
+                <span>Control Flow</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/loops.html">
+                <span>Loops</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/switch-case.html">
+                <span>Switch-Case</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Variabel</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/booleans.html">
+                <span>Booleans</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/collections.html">
+                <span>Collections — List, Set, Map</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/index.html">
+                <span>Variables & Data Types</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/numbers.html">
+                <span>Numbers — int, double, num</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/strings.html">
+                <span>Strings</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">04 Oop And Advanced</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/asynchronous.html">
+                <span>Asynchronous Programming in Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/index.html">
+                <span>OOP & Advanced Concepts</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/null-safety.html">
+                <span>Null Safety in Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/oop-dasar.html">
+                <span>OOP Basics in Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">05 Ecosystem</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../05-ecosystem/index.html">
+                <span>Dart Ecosystem</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </nav>
+            </div>
+        </aside>
+
+        <div class="fixed inset-0 bg-primary/40 dark:bg-black/75 z-[60] transition-opacity duration-300 hidden md:hidden" id="side-drawer">
+            <aside class="bg-surface dark:bg-[#161616] h-full w-[280px] border-r border-primary dark:border-zinc-800 flex flex-col p-6 pt-10 transform transition-transform duration-300 -translate-x-full">
+                <div class="flex justify-between items-center mb-10">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-zinc-100">Monolith Docs</h2>
+                        
+                        <p class="font-metadata text-metadata text-on-surface-variant dark:text-zinc-400">v1.0.4</p>
+                        
+                    </div>
+                    <button id="close-drawer" aria-label="Close Menu">
+                        <span class="material-symbols-outlined text-primary dark:text-zinc-100">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-1 overflow-y-auto overflow-x-hidden min-h-0">
+                    
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">01 Introduction</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../01-introduction/index.html">
+                <span>Introduction to Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="true">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="font-bold text-primary dark:text-zinc-100">02 Preparation</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 rotate-90">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 ">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="index.html">
+                <span>Development Environment Setup</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="instalasi-linux.html">
+                <span>Installing Dart on Linux</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 font-bold text-primary dark:text-zinc-100 underline underline-offset-4" href="instalasi-macos.html">
+                <span>Installing Dart on macOS</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="instalasi-windows.html">
+                <span>Installing Dart on Windows</span>
+            </a>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Ide</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/android-studio.html">
+                <span>Android Studio Setup for Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/index.html">
+                <span>IDE & Editor Setup</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/intellij-idea.html">
+                <span>IntelliJ IDEA Setup for Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../02-preparation/ide/vscode.html">
+                <span>VS Code Setup for Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">03 Fundamentals</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/index.html">
+                <span>Dart Fundamentals</span>
+            </a>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Kontrol Alur</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/if-else.html">
+                <span>If-Else</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/index.html">
+                <span>Control Flow</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/loops.html">
+                <span>Loops</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/kontrol-alur/switch-case.html">
+                <span>Switch-Case</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">Variabel</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/booleans.html">
+                <span>Booleans</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/collections.html">
+                <span>Collections — List, Set, Map</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/index.html">
+                <span>Variables & Data Types</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/numbers.html">
+                <span>Numbers — int, double, num</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../03-fundamentals/variabel/strings.html">
+                <span>Strings</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">04 Oop And Advanced</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/asynchronous.html">
+                <span>Asynchronous Programming in Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/index.html">
+                <span>OOP & Advanced Concepts</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/null-safety.html">
+                <span>Null Safety in Dart</span>
+            </a>
+            
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../04-oop-and-advanced/oop-dasar.html">
+                <span>OOP Basics in Dart</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+            
+            <div class="nav-group" data-open="false">
+                <button class="nav-group-toggle w-full flex items-center justify-between py-2 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal transition-colors duration-150 text-left">
+                    <span class="">05 Ecosystem</span>
+                    <span class="material-symbols-outlined text-[16px] nav-group-icon transition-transform duration-200 ">chevron_right</span>
+                </button>
+                <div class="nav-group-children pl-3 border-l border-primary/20 dark:border-zinc-700 ml-1 space-y-1 hidden">
+                    
+        
+            
+            <a class="flex items-center gap-stack-sm py-2 hover:translate-x-1 transition-transform duration-200 text-on-surface-variant dark:text-zinc-400 hover:text-primary dark:hover:text-zinc-100 font-normal" href="../05-ecosystem/index.html">
+                <span>Dart Ecosystem</span>
+            </a>
+            
+        
+    
+                </div>
+            </div>
+            
+        
+    
+                </nav>
+            </aside>
+        </div>
+
+        <main class="flex-grow ml-0 md:ml-[280px] pt-24 px-6 md:px-margin-page pb-margin-page max-w-full overflow-hidden">
+            <div class="max-w-4xl mx-auto">
+                
+                <nav class="mb-stack-md flex items-center gap-2 text-on-surface-variant dark:text-zinc-400 font-label-md text-label-md overflow-x-auto whitespace-nowrap scrollbar-hide">
+                    
+                        
+                        
+                        <a href="index.html" class="hover:text-primary dark:hover:text-zinc-100 cursor-pointer transition-colors">Home</a>
+                        
+                    
+                        
+                        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                        
+                        
+                        <a href="#" class="hover:text-primary dark:hover:text-zinc-100 cursor-pointer transition-colors">Persiapan</a>
+                        
+                    
+                        
+                        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                        
+                        
+                        <span class="text-primary dark:text-zinc-100 font-bold">Instalasi macOS</span>
+                        
+                    
+                </nav>
+                
+
+                <header class="mb-stack-xl">
+                    <h1 class="font-headline-xl text-headline-xl mb-stack-sm text-primary dark:text-zinc-100 uppercase tracking-tight leading-tight">
+                        Installing Dart on macOS
+                    </h1>
+                    
+                    <h2 class="font-headline-md text-headline-md text-on-surface-variant dark:text-zinc-400 italic">
+                        Panduan langkah demi langkah instalasi Dart SDK pada sistem operasi macOS
+                    </h2>
+                    
+                    <div class="mt-stack-md flex flex-wrap items-center gap-stack-sm border-y border-primary dark:border-zinc-800 py-4">
+                        
+                        <div class="flex items-center gap-2 font-metadata text-metadata text-on-surface dark:text-zinc-300">
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            <span class="uppercase tracking-wider">06-07-2026</span>
+                        </div>
+                        
+                        
+                        <div class="h-4 w-[2px] bg-primary-container/20 dark:bg-zinc-800"></div>
+                        
+                        
+                        <div class="bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-950 px-3 py-1 font-label-md text-[12px] uppercase tracking-wider brutalist-border dark:border-zinc-800 font-bold">
+                            Dart
+                        </div>
+                        
+                    </div>
+                </header>
+
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            Instalasi Dart di macOS dapat dilakukan melalui Homebrew (direkomendasikan) atau instalasi manual dari arsip ZIP. Homebrew memudahkan update dan manajemen versi.
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Metode 1: Homebrew (Direkomendasikan)</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            Homebrew adalah package manager standar untuk macOS.
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Install Homebrew jika belum ada</span>
+/bin/bash <span class="code-annotation">-c</span> <span class="code-string">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
+
+<span class="code-comment"># Install Dart SDK</span>
+<span class="code-kw">brew</span> install <span class="code-kw">dart</span>
+
+<span class="code-comment"># Verifikasi instalasi</span>
+<span class="code-kw">dart</span> <span class="code-annotation">--version</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">output.txt</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">TEXT</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block">dart --version
+Dart SDK version: 3.5.0 (stable) (Tue Aug 6 10:00:00 2024 +0000) on &quot;macos_arm64&quot;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># 1. Buka https://dart.dev/get-dart</span>
+<span class="code-comment"># 2. Download sesuai arsitektur:</span>
+<span class="code-comment">#    - Apple Silicon (M1/M2/M3): dart-sdk-macos-arm64.zip</span>
+<span class="code-comment">#    - Intel: dart-sdk-macos-x64.zip</span>
+
+<span class="code-comment"># 3. Ekstrak dan pindahkan ke direktori permanen</span>
+unzip ~/Downloads/<span class="code-kw">dart</span>-sdk-macos-arm64.zip <span class="code-annotation">-d</span> ~/development
+<span class="code-comment"># atau untuk Intel:</span>
+<span class="code-comment"># unzip ~/Downloads/dart-sdk-macos-x64.zip -d ~/development</span>
+
+<span class="code-comment"># 4. Tambahkan ke PATH (tambahkan ke ~/.zshrc atau ~/.bash_profile)</span>
+<span class="code-kw">echo</span> <span class="code-string">&#x27;export PATH= PROT9 &#x27;</span> >> ~/.zshrc
+<span class="code-kw">source</span> ~/.zshrc
+
+<span class="code-comment"># 5. Verifikasi</span>
+<span class="code-kw">dart</span> <span class="code-annotation">--version</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Buat file test</span>
+<span class="code-kw">cat</span> > test.<span class="code-kw">dart</span> << <span class="code-string">&#x27;EOF&#x27;</span>
+void main() {
+  print(<span class="code-string">&#x27;Dart di macOS berjalan!&#x27;</span>);
+  print(<span class="code-string">&#x27;Arsitektur: ${Platform.operatingSystem}&#x27;</span>);
+}
+EOF
+
+<span class="code-comment"># Jalankan</span>
+<span class="code-kw">dart</span> run test.<span class="code-kw">dart</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">output.txt</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">TEXT</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block">Dart di macOS berjalan!
+Arsitektur: macos</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Tambahkan pub cache bin ke PATH</span>
+<span class="code-kw">echo</span> <span class="code-string">&#x27;export PATH= PROT1 &#x27;</span> >> ~/.zshrc
+<span class="code-kw">source</span> ~/.zshrc</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block"><span class="code-comment"># Melalui Homebrew</span>
+<span class="code-kw">brew</span> update
+<span class="code-kw">brew</span> upgrade <span class="code-kw">dart</span>
+
+<span class="code-comment"># Cek versi terbaru</span>
+<span class="code-kw">dart</span> <span class="code-annotation">--version</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <h3 class="font-headline-md text-headline-md mb-stack-md border-l-4 border-primary dark:border-zinc-700 pl-4 uppercase text-primary dark:text-zinc-100">Troubleshooting</h3>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <strong>Rosetta vs Native ARM.</strong> Jika menggunakan Mac Apple Silicon, pastikan Anda mengunduh versi <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">arm64</code>. Versi <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">x64</code> tetap berjalan melalui Rosetta 2 namun dengan performa lebih rendah.
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <strong>Xcode Command Line Tools.</strong> Beberapa fitur <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">dart:ffi</code> memerlukan Xcode CLI tools:
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="bg-black text-white p-0 relative brutalist-border dark:border-zinc-800 mb-stack-md overflow-hidden">
+                            <div class="flex justify-between items-center bg-[#18181b] px-4 py-2 border-b border-white/10">
+                                <span class="font-label-md text-label-md text-gray-400">terminal.sh</span>
+                                <span class="font-label-md text-[12px] text-gray-500 uppercase tracking-widest">BASH</span>
+                            </div>
+                            <div class="p-6 font-code-block text-code-block overflow-x-auto relative">
+                                <div class="code-accent-line pl-4">
+                                    <pre class="whitespace-pre"><code class="text-white block">xcode-select <span class="code-annotation">--install</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                
+                    
+                    <section class="mb-stack-xl">
+                        <div class="font-body-lg text-body-lg mb-stack-md text-on-surface dark:text-zinc-300 leading-relaxed">
+                            <strong>Permission denied saat brew.</strong> Jalankan <code class="font-code-block bg-black text-white px-1 py-0.5 brutalist-border">brew doctor</code> untuk diagnosis dan perbaikan otomatis.
+                        </div>
+                    </section>
+                    
+                
+
+                
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6 border-t border-primary dark:border-zinc-800 mt-12">
+                    
+                    <a href="instalasi-windows.html" class="group brutalist-border dark:border-zinc-800 p-4 hover:bg-primary dark:hover:bg-zinc-200 hover:text-on-primary dark:hover:text-zinc-950 transition-all cursor-pointer flex items-center gap-3 text-primary dark:text-zinc-100">
+                        <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                        <div>
+                            <span class="font-label-md text-[10px] opacity-60 uppercase block">Previous</span>
+                            <h4 class="font-bold text-sm leading-tight">Instalasi Windows</h4>
+                        </div>
+                    </a>
+                    
+
+                    
+                    <a href="instalasi-linux.html" class="group brutalist-border dark:border-zinc-800 p-4 bg-primary dark:bg-zinc-200 text-on-primary dark:text-zinc-950 hover:bg-surface dark:hover:bg-[#121212] hover:text-primary dark:hover:text-zinc-100 transition-all cursor-pointer flex items-center justify-end gap-3 text-right">
+                        <div>
+                            <span class="font-label-md text-[10px] opacity-60 uppercase block">Next</span>
+                            <h4 class="font-bold text-sm leading-tight">Instalasi Linux</h4>
+                        </div>
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                    </a>
+                    
+                </section>
+                
+
+                <footer class="mt-20 border-t border-primary dark:border-zinc-800 pt-8 pb-12 text-center">
+                    <p class="font-label-md text-xs text-on-surface-variant dark:text-zinc-400 uppercase">
+                        &copy; 1991-2026 Monolith. ALL RIGHTS RESERVED.
+                    </p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+                btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+                btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+            });
+
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+
+                themeToggle.addEventListener('click', () => {
+                    const isDark = document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    themeToggle.textContent = isDark ? 'light_mode' : 'dark_mode';
+                });
+            }
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeDrawer = document.getElementById('close-drawer');
+            const sideDrawer = document.getElementById('side-drawer');
+            if (menuToggle && closeDrawer && sideDrawer) {
+                const drawerAside = sideDrawer.querySelector('aside');
+                
+                function toggleDrawer(open) {
+                    if (open) {
+                        sideDrawer.classList.remove('hidden');
+                        setTimeout(() => {
+                            sideDrawer.classList.add('opacity-100');
+                            drawerAside.classList.remove('-translate-x-full');
+                        }, 10);
+                    } else {
+                        sideDrawer.classList.remove('opacity-100');
+                        drawerAside.classList.add('-translate-x-full');
+                        setTimeout(() => {
+                            sideDrawer.classList.add('hidden');
+                        }, 300);
+                    }
+                }
+
+                menuToggle.addEventListener('click', () => toggleDrawer(true));
+                closeDrawer.addEventListener('click', () => toggleDrawer(false));
+                sideDrawer.addEventListener('click', (e) => {
+                    if (e.target === sideDrawer) toggleDrawer(false);
+                });
+            }
+
+            document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const group = toggle.closest('.nav-group');
+                    const children = group.querySelector('.nav-group-children');
+                    const icon = toggle.querySelector('.nav-group-icon');
+                    const label = toggle.querySelector('span:first-child');
+                    const isOpen = !children.classList.contains('hidden');
+
+                    if (isOpen) {
+                        children.classList.add('hidden');
+                        icon.classList.remove('rotate-90');
+                        label.classList.remove('font-bold', 'text-primary', 'dark:text-zinc-100');
+                    } else {
+                        children.classList.remove('hidden');
+                        icon.classList.add('rotate-90');
+                        label.classList.add('font-bold', 'text-primary', 'dark:text-zinc-100');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
